@@ -31,6 +31,7 @@ import org.elasticsearch.common.xcontent.XContentFactory;
 import org.elasticsearch.rest.RestStatus;
 import org.elasticsearch.rest.action.support.RestActions;
 import org.elasticsearch.search.SearchHits;
+import org.elasticsearch.search.aggregations.HasAggregations;
 import org.elasticsearch.search.aggregations.Aggregations;
 import org.elasticsearch.search.internal.InternalSearchResponse;
 import org.elasticsearch.search.profile.ProfileShardResult;
@@ -46,7 +47,7 @@ import static org.elasticsearch.search.internal.InternalSearchResponse.readInter
 /**
  * A response of a search request.
  */
-public class SearchResponse extends ActionResponse implements StatusToXContent {
+public class SearchResponse extends ActionResponse implements StatusToXContent, HasAggregations {
 
     private InternalSearchResponse internalResponse;
 
